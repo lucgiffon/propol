@@ -3,6 +3,28 @@ propol
 
 Try to make projection of political parties or people in avector space in order to enable visualisation.
 
+install
+-------
+
+- Install requirements
+
+    
+    make requirements
+
+- Download tarball from https://lucgiffon.fr/external.tgz and put it in data/external directory.
+
+
+    make raw_data
+  
+- Setup the `project_dir` variable in a .env file
+
+
+    echo project_dir=`pwd`
+
+- Process data
+
+  make data
+
 Project Organization
 ------------
 
