@@ -9,7 +9,8 @@ install
 - Install requirements   
 - Download tarball from https://lucgiffon.fr/external.tgz and put it in data/external directory.
 - Setup the `project_dir` variable in a .env file
-- Process data
+- Process data: Clean the raw data; store the sanitized version in data/interim directory; build alliance matrix from 
+  sanitized data; store it in `data/processed` directory.
 
 
 ```

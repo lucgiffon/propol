@@ -102,7 +102,7 @@ def prepare_alliance_matrix():
     path_output_sanitized_candidates_list = project_dir / "data/interim/sanitized_candidates.csv"
     path_output_sanitized_list_of_lists = project_dir / "data/interim/sanitized_lists.csv"
 
-    path_output_alliances_matrix = project_dir / "data/interim/alliance_matrix.csv"
+    path_output_alliances_matrix = project_dir / "data/processed/alliance_matrix.csv"
     path_output_alliances_matrix.parent.mkdir(parents=True, exist_ok=True)
 
     with open(path_output_sanitized_candidates_list, 'r') as in_candidates:
