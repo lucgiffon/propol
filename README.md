@@ -12,11 +12,12 @@ install
 - Process data
 
 
+```
     make requirements
     make raw_data
     echo project_dir=`pwd`
     make data
-    
+```    
 
 
 Project Organization
