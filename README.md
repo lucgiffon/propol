@@ -6,27 +6,14 @@ Try to make projection of political parties or people in avector space in order 
 install
 -------
 
-- Install requirements
-
-    
-    make requirements
-    
-
+- Install requirements   
 - Download tarball from https://lucgiffon.fr/external.tgz and put it in data/external directory.
-
-
-    make raw_data
-  
-  
 - Setup the `project_dir` variable in a .env file
-
-
-    echo project_dir=`pwd`
-    
-
 - Process data
 
-
+    make requirements
+    make raw_data
+    echo project_dir=`pwd`
     make data
 
 
