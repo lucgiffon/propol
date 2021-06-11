@@ -16,7 +16,7 @@ install
 make requirements
 make raw_data
 echo project_dir=`pwd` > .env
-make data
+make processed_data
 ```    
 
 
