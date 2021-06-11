@@ -11,10 +11,12 @@ install
 - Setup the `project_dir` variable in a .env file
 - Process data
 
+
     make requirements
     make raw_data
     echo project_dir=`pwd`
     make data
+    
 
 
 Project Organization
