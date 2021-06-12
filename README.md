@@ -6,6 +6,8 @@ Try to make projection of political parties or people in avector space in order 
 install
 -------
 
+Make sure you have set up your python virtual environment. Then, the following commands will:
+
 - Install requirements   
 - Download tarball from https://lucgiffon.fr/external.tgz and put it in data/external directory.
 - Setup the `project_dir` variable in a .env file
