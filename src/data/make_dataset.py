@@ -4,7 +4,6 @@ import os
 import pandas as pd
 import numpy as np
 import unidecode
-import plotly.express as px
 
 
 from loguru import logger
@@ -131,14 +130,6 @@ def prepare_alliance_matrix():
     df_alliance_matrix_A = pd.DataFrame(alliance_matrix_A)
     df_alliance_matrix_A.rename(inplace=True, columns=lambda x: unique_party_list_L[x], index=lambda x: unique_party_candidate_C[x])
 
-    fig = px.imshow(df_alliance_matrix_A.values,
-                    labels=dict(x="City councel parties", y="Deputy parties", color="Number of alliances"),
-                    x=df_alliance_matrix_A.columns,
-                    y=df_alliance_matrix_A.index
-                    )
-    fig.update_xaxes(side="top")
-    fig.show()
-
     df_alliance_matrix_A.to_csv(path_output_alliances_matrix, index=True)
 
 
@@ -155,6 +146,6 @@ def main():
 if __name__ == '__main__':
     # find .env automagically by walking up directories until it's found, then
     # load up the .env entries as environment variables
-    dct_env = load_dotenv(find_dotenv())
+    load_dotenv(find_dotenv())
     project_dir = Path(os.environ["project_dir"])
     main()
