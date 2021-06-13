@@ -14,7 +14,6 @@ Make sure you have set up your python virtual environment. Then, the following c
 - Process data: Clean the raw data; store the sanitized version in data/interim directory; build alliance matrix from 
   sanitized data; store it in `data/processed` directory.
 
-
 ```
 make requirements
 make raw_data
@@ -22,6 +21,18 @@ echo project_dir=`pwd` > .env
 make processed_data
 ```    
 
+
+visualizations
+-------------
+
+To run the vizualization, type one of the following:
+
+```
+make isomap 
+make pca
+make tsne
+make matrix
+```
 
 Project Organization
 ------------

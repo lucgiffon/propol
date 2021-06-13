@@ -45,7 +45,21 @@ clean:
 # PROJECT RULES                                                                 #
 #################################################################################
 
+## Project parties alliances probabilities on 2D with PCA
+pca:
+	vizualize pca
 
+## Project parties alliances probabilities on 2D with T-SNE
+tsne:
+	vizualize tsne
+
+## Project parties alliances probabilities on 2D with PCA
+isomap:
+	vizualize isomap
+
+## Show parties alliances probabilities in a matrix
+matrix:
+	vizualize matrix
 
 #################################################################################
 # Self Documenting Commands                                                     #

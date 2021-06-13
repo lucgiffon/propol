@@ -7,4 +7,9 @@ setup(
     description='Try to make projection of political parties or people in avector space in order to enable visualisation.',
     author='Luc Giffon',
     license='MIT',
+    entry_points={
+        'console_scripts': [
+            'vizualize=src.visualization.visualize:run',
+        ],
+    },
 )

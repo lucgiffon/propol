@@ -3,11 +3,14 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 import pandas as pd
+import click
 
 from dotenv import load_dotenv, find_dotenv
 from pathlib import Path
 from sklearn.manifold import Isomap, TSNE
 from sklearn.decomposition import PCA
+
+project_dir = Path(os.getcwd())
 
 def show_alliance_matrix(df_alliance_matrix_A):
     fig = px.imshow(df_alliance_matrix_A.values,
@@ -60,18 +63,24 @@ def show_projection(df_alliance_matrix_A, method='tsne', n_components=2):
         fig.show()
 
 
-def main():
+@click.command()
+@click.argument("method", type=click.Choice(["matrix", "pca", "tsne", "isomap"]))
+def main(method):
     path_output_alliances_matrix = project_dir / "data/processed/alliance_matrix.csv"
     df_alliance_matrix_A = pd.read_csv(path_output_alliances_matrix, index_col=0)
     df_alliance_matrix_A /= np.sum(df_alliance_matrix_A.values, axis=1).reshape(-1, 1)
     # df_alliance_matrix_A = df_alliance_matrix_A.drop("EXG")
     # df_alliance_matrix_A = df_alliance_matrix_A.drop("FN")
-    show_alliance_matrix(df_alliance_matrix_A)
-    show_projection(df_alliance_matrix_A, method='tsne', n_components=2)
-    show_projection(df_alliance_matrix_A, method='pca', n_components=2)
+    if method == "matrix":
+        show_alliance_matrix(df_alliance_matrix_A)
+    else:
+        show_projection(df_alliance_matrix_A, method=method, n_components=2)
 
-
-if __name__ == "__main__":
+def run():
+    global project_dir
     load_dotenv(find_dotenv())
     project_dir = Path(os.environ["project_dir"])
     main()
+
+if __name__ == "__main__":
+    run()
